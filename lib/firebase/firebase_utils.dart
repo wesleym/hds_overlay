@@ -14,17 +14,18 @@ class FirebaseUtils {
       if (kDebugMode) {
         dbUrl = 'http://localhost:9000/?ns=health-data-server-default-rtdb';
       } else {
-        dbUrl = 'https://health-data-server-default-rtdb.firebaseio.com';
+        dbUrl =
+            'https://wesleys-health-data-server-default-rtdb.firebaseio.com';
       }
       initializeApp(
-        apiKey: "AIzaSyCbbBPvlWvmOvI6Is8PYXNpJ78N03AYcyU",
-        authDomain: "health-data-server.firebaseapp.com",
+        apiKey: "AIzaSyA6n7zUD4CQ_lwPwz4_usGYcVGEcyH83vQ",
+        authDomain: "wesleys-health-data-server.firebaseapp.com",
         databaseURL: dbUrl,
-        projectId: "health-data-server",
-        storageBucket: "health-data-server.appspot.com",
-        messagingSenderId: "47929674141",
-        appId: "1:47929674141:web:0606fd3354256f51860774",
-        measurementId: "G-1V10QYSSHG",
+        projectId: "wesleys-health-data-server",
+        storageBucket: "wesleys-health-data-server.appspot.com",
+        messagingSenderId: "338831917267",
+        appId: "1:338831917267:web:d1739010022ea3e1915426",
+        measurementId: "G-8Y6ESLMMEM",
       );
     }
 

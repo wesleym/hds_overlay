@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -24,12 +25,13 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>Health Data Server</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" type="text/css" href="splash/style.css">
 </head>
+
 <body>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
@@ -41,14 +43,14 @@
 
   <script>
     var firebaseConfig = {
-      apiKey: "AIzaSyCbbBPvlWvmOvI6Is8PYXNpJ78N03AYcyU",
-      authDomain: "health-data-server.firebaseapp.com",
-      databaseURL: "https://health-data-server-default-rtdb.firebaseio.com",
-      projectId: "health-data-server",
-      storageBucket: "health-data-server.appspot.com",
-      messagingSenderId: "47929674141",
-      appId: "1:47929674141:web:0606fd3354256f51860774",
-      measurementId: "G-1V10QYSSHG"
+      apiKey: "AIzaSyA6n7zUD4CQ_lwPwz4_usGYcVGEcyH83vQ",
+      authDomain: "wesleys-health-data-server.firebaseapp.com",
+      databaseURL: "https://wesleys-health-data-server-default-rtdb.firebaseio.com",
+      projectId: "wesleys-health-data-server",
+      storageBucket: "wesleys-health-data-server.appspot.com",
+      messagingSenderId: "338831917267",
+      appId: "1:338831917267:web:d1739010022ea3e1915426",
+      measurementId: "G-8Y6ESLMMEM",
     };
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
@@ -69,10 +71,13 @@
     }
   </script>
   <picture id="splash">
-    <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
-    <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x" media="(prefers-color-scheme: dark)">
+    <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x"
+      media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
+    <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x"
+      media="(prefers-color-scheme: dark)">
     <img class="center" src="splash/img/light-1x.png" />
   </picture>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
+
 </html>

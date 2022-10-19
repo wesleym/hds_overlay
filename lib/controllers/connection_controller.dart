@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/foundation.dart';
@@ -64,11 +65,12 @@ class ConnectionController extends GetxController {
     }
 
     _connection?.messageStream.listen((message) {
-      final log = '(${message.source}) ${message.name}: ${message.value}';
+      final logg = '(${message.source}) ${message.name}: ${message.value}';
+      log(logg);
 
       if (message is UnknownDataMessage) {
         // Don't do anything with these
-        logs.add(LogMessage(LogLevel.warn, log));
+        logs.add(LogMessage(LogLevel.warn, logg));
         return;
       }
 
@@ -79,7 +81,7 @@ class ConnectionController extends GetxController {
         return;
       }
       _messages[typeSource] = message;
-      logs.add(LogMessage(LogLevel.data, log));
+      logs.add(LogMessage(LogLevel.data, logg));
 
       // Only calculate hr features on the web overlay
       // They are useless in the desktop app

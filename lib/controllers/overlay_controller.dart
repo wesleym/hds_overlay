@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
+
 import 'package:get/get.dart';
 import 'package:hds_overlay/hive/hive_utils.dart';
 import 'package:hds_overlay/hive/overlay_profile.dart';
@@ -24,18 +26,20 @@ class OverlayController extends GetxController {
   Timer? _hoverTimer;
 
   OverlayController() {
-    ever(
-      mouseHovering,
-      (bool hovering) {
-        if (hovering) {
-          _hoverTimer?.cancel();
-          _hoverTimer = Timer(
-            Duration(seconds: 15),
-            () => mouseHovering.value = false,
-          );
-        }
-      },
-    );
+    if (kIsWeb) {
+      ever(
+        mouseHovering,
+        (bool hovering) {
+          if (hovering) {
+            _hoverTimer?.cancel();
+            _hoverTimer = Timer(
+              Duration(seconds: 15),
+              () => mouseHovering.value = false,
+            );
+          }
+        },
+      );
+    }
 
     // Force the above ever to get called
     mouseHovering.value = true;

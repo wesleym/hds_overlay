@@ -53,7 +53,12 @@ abstract class SocketClient extends ConnectionBase {
     // This channel is used for sending data on desktop and receiving data on web
     final channelSubscription = _channel?.stream.listen((message) {
       if (kIsWeb) {
-        handleMessage(message, 'watch');
+        log(LogLevel.info, 'Received (?) message $message');
+        if ((message as String).startsWith('wesley!!-')) {
+          handleMessage(message.substring(9), 'wesley');
+        } else {
+          handleMessage(message, 'watch');
+        }
       }
     });
     channelSubscription?.onDone(() {

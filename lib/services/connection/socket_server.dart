@@ -99,19 +99,21 @@ class SocketServer extends ConnectionBase {
     final source = _clients[client] ?? DataSource.unknown;
     if (source == DataSource.unknown) {
       // Ignore messages from unidentified clients
+      log(LogLevel.info, 'Not doing anything with client $client');
       return;
     }
 
     handleMessage(message, source);
 
     // Only broadcast messages from the watch
-    if (source != DataSource.watch) return;
+    if (source != DataSource.watch && source != 'wesley') return;
 
     // Broadcast to all clients that aren't the watch or the source the data came from
     final externalClients = _clients.entries
         .toList()
         .where((e) => e.value != DataSource.watch && e.value != source);
-    externalClients.forEach((e) => e.key.sink.add(message));
+    externalClients.forEach(
+        (e) => e.key.sink.add((source == 'wesley' ? 'wesley!!-' : '') + message));
 
     // Broadcast to all servers
     _servers.forEach((e) => e.sendMessage(message));
